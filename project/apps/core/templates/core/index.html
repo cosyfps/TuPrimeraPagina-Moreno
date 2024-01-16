@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+<!-- * Header block-->
+{% block header %}
+    <header class="header">
+        <h1 class="title">
+            Pre-Entrega 3#
+        </h1>
+
+        <nav class="navbar">
+            <button><a href="{% url 'tienda_list' %}">Lista Tiendas</a></button>
+            <button><a href="{% url 'tienda_form' %}">Formulario Tiendas</a></button>
+        </nav>
+    </header>
+{% endblock header %}
+
+<!-- * Content block-->
+{% block content %}
+    <h1>wekito</h1>
+{% endblock content %}
