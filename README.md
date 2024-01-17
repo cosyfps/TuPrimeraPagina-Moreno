@@ -9,7 +9,7 @@ Pre-Entrega 3#
 1.0
 
 ## Descripción del Proyecto
-
+veterinaria es un sistema que permite gestionar la información relacionada con pacientes, doctores, mascotas, consultas y otros aspectos relevantes para el funcionamiento de la veterinaria. 
 
 ## Tecnología Utilizada
 
