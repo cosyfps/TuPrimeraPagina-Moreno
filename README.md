@@ -11,6 +11,11 @@ Pre-Entrega 3#
 ## Descripción del Proyecto
 veterinaria es un sistema que permite gestionar la información relacionada con pacientes, doctores, mascotas, consultas y otros aspectos relevantes para el funcionamiento de la veterinaria. 
 
+- La metodologia es simple, para llegar a agregar una consulta se necesita haber agregado de ante mano:
+   un cliente, un doctor y una mascota.
+- Pagina web de uso sencillo.
+- Prueba de lo visto en clases.
+
 ## Tecnología Utilizada
 
 ##### Front-End
