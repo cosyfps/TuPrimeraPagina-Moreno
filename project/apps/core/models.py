@@ -49,7 +49,6 @@ class Mascota(models.Model):
     descripcionMascota = models.CharField(max_length=100, null=True, blank=True)
     fechanacimientoMascota = models.DateField(null=False, blank=False)
     nombreDueno = models.ForeignKey(Cliente, null=True, blank=True, on_delete = models.CASCADE)
-    nombreDoctor = models.ForeignKey(Doctor, null=True, blank=True, on_delete = models.CASCADE)
 
     def __str__(self):
         return f"{self.nombreMascota}, {self.razaMascota}"

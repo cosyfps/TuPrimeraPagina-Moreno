@@ -1,1 +1,39 @@
 {% extends 'core/base.html' %}
+
+<!-- * Content block-->
+{% block content %}
+
+    <!-- Masthead -->
+    <header style="padding-top: calc(6rem + 104px); padding-bottom: 53rem;" class="masthead bg-primary text-white text-center" >
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Heading-->
+            <h2 class="masthead-heading text-uppercase mb-0">Mascotas List</h2>
+            <button style="margin-top: 4rem;"><a href="{% url 'consultas_form' %}"> Agregar Consulta</a></button>
+            <h4 style="margin-top: 2rem; max-width: 1000px;">
+                <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
+                    <thead>
+                        <tr style="border: 1px solid black; background-color: #15725b;">
+                            <th style="border: 1px solid black; padding: 8px;">Nombre Consulta</th>
+                            <th style="border: 1px solid black; padding: 8px;">Fecha Consulta</th>
+                            <th style="border: 1px solid black; padding: 8px;">Dueño</th>
+                            <th style="border: 1px solid black; padding: 8px;">Doctor</th>
+                            <th style="border: 1px solid black; padding: 8px;">Mascota Atendita</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for x in Consulta %}
+                        <tr style="border: 1px solid black;">
+                            <td style="border: 1px solid black; padding: 8px;">{{ x.nombreConsulta }}</td>
+                            <td style="border: 1px solid black; padding: 8px;">{{ x.fechaConsulta }}</td>
+                            <td style="border: 1px solid black; padding: 8px;">{{ x.duenoConsulta }}</td>
+                            <td style="border: 1px solid black; padding: 8px;">{{ x.doctorConsulta }}</td>
+                            <td style="border: 1px solid black; padding: 8px;">{{ x.mascotaConsulta }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </h4>
+        </div>
+    </header>
+
+{% endblock content %}

@@ -1,1 +1,37 @@
 {% extends 'core/base.html' %}
+
+<!-- * Content block-->
+{% block content %}
+
+    <!-- Masthead -->
+    <header style="padding-top: calc(6rem + 104px); padding-bottom: 53rem;" class="masthead bg-primary text-white text-center" >
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Heading-->
+            <h2 class="masthead-heading text-uppercase mb-0">Mascotas List</h2>
+            <button style="margin-top: 4rem;"><a href="{% url 'mascotas_form' %}"> Agregar Mascota</a></button>
+            <h4 style="margin-top: 2rem; max-width: 1000px;">
+                <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
+                    <thead>
+                        <tr style="border: 1px solid black; background-color: #15725b;">
+                            <th style="border: 1px solid black; padding: 8px;">Nombre</th>
+                            <th style="border: 1px solid black; padding: 8px;">Raza</th>
+                            <th style="border: 1px solid black; padding: 8px;">Fecha Nacimiento</th>
+                            <th style="border: 1px solid black; padding: 8px;">Dueño</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for x in Mascota %}
+                        <tr style="border: 1px solid black;">
+                            <td style="border: 1px solid black; padding: 8px;">{{ x.nombreMascota }}</td>
+                            <td style="border: 1px solid black; padding: 8px;">{{ x.razaMascota }}</td>
+                            <td style="border: 1px solid black; padding: 8px;">{{ x.fechanacimientoMascota }}</td>
+                            <td style="border: 1px solid black; padding: 8px;">{{ x.nombreDueno }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </h4>
+        </div>
+    </header>
+
+{% endblock content %}
