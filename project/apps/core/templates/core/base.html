@@ -1,22 +1,103 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre-Entrega 3# | Kelvin A. Moreno</title>
-    <link rel="stylesheet" href="core/style.css">
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Pre-Entrega 3# | Kelvin A. Moreno</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'core/assets/favicon.ico' %}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'core/css/styles.css' %}" rel="stylesheet" />
 
-<body>
+        <style>
 
-    {% block header %}
-    {% endblock header %}
+            .navbar-brand {
+                padding-top: var(--bs-navbar-brand-padding-y);
+                padding-bottom: var(--bs-navbar-brand-padding-y);
+                margin-right: var(--bs-navbar-brand-margin-end);
+                margin-left: 10px;
+                font-size: var(--bs-navbar-brand-font-size);
+                color: var(--bs-navbar-brand-color);
+                text-decoration: none;
+                white-space: nowrap;
+            }
+            .btn-social {
+                border-radius: 100%;
+                display: inline-flex;
+                width: 3.25rem;
+                height: 3.25rem;
+                font-size: 2rem;
+                justify-content: center;
+                align-items: center;
+            }
 
-    {% block content %}    
-    {% endblock content %}
+            .masthead {
+                padding-top: calc(6rem + 104px);
+                padding-bottom: 53rem; /*2560*1440*/
+            }
 
-    {% block footer %}
-    {% endblock footer %}
+            .bg-primary {
+                --bs-bg-opacity: 1;
+                background-color: #58b690 !important;
+            }
 
-</body>
+        </style>
+
+    </head>
+
+    <body id="page-top">
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/cosyfps" target="_blank"><i class="fab fa-fw fa-github"></i></a>
+                <a class="navbar-brand" href="{% url 'index' %}">Venterinaria</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+
+                        <!-- TODO: cambiar los links hacia archivos html de los modelos -->
+
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#">Cliente</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#">Doctor</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#">Mascota</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#">Consulta</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--Content Block-->
+        {% block content %}
+        {% endblock content %}
+        
+
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>CoderHouse &copy; Pre-Entrega 3# 2024</small></div>
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    </body>
+
 </html>
