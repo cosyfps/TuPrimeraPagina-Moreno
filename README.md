@@ -25,4 +25,4 @@ veterinaria es un sistema que permite gestionar la información relacionada con 
 
 ##### Back-End
 - Python 3.12.1
-- Django 5.0.1
+- Django 5.3.2
