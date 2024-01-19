@@ -9,29 +9,8 @@ from . import forms
 def index(request):
     return render(request, "core/index.html")
 
-## * Read Models (list)
-def clientes_list(request):
-    consulta = models.Cliente.objects.all()
-    context = {"Cliente" : consulta}
-    return render(request, "core/clientes_list.html", context)
-
-def doctores_list(request):
-    consulta = models.Doctor.objects.all()
-    context = {"Doctor" : consulta}
-    return render(request, "core/doctores_list.html", context)
-
-def mascotas_list(request):
-    consulta = models.Mascota.objects.all()
-    context = {"Mascota":consulta}
-    return render(request, "core/mascotas_list.html", context)
-
-def consultas_list(request):
-    consulta = models.Consulta.objects.all()
-    context = {"Consulta":consulta}
-    return render(request, "core/consultas_list.html", context)
 
 ## * Create Models (form)
-
 def clientes_form(request):
     if request.method == 'POST':
         form = forms.ClienteForm(request.POST)
@@ -72,4 +51,29 @@ def consultas_form(request):
         form = forms.ConsultaForm()
     return render(request, "core/consultas_form.html", {"form" : form})
 
+
+## * Read Models (list)
+def clientes_list(request):
+    consulta = models.Cliente.objects.all()
+    context = {"Cliente" : consulta}
+    return render(request, "core/clientes_list.html", context)
+
+def doctores_list(request):
+    consulta = models.Doctor.objects.all()
+    context = {"Doctor" : consulta}
+    return render(request, "core/doctores_list.html", context)
+
+def mascotas_list(request):
+    consulta = models.Mascota.objects.all()
+    context = {"Mascota":consulta}
+    return render(request, "core/mascotas_list.html", context)
+
+def consultas_list(request):
+    consulta = models.Consulta.objects.all()
+    context = {"Consulta":consulta}
+    return render(request, "core/consultas_list.html", context)
+
+
 ## TODO: Update Models (Update)
+## TODO: Delete Models (Delete)
+
