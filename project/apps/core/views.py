@@ -7,7 +7,7 @@ from . import forms
 
 ## * Main page
 def index(request):
-    return render(request, "core/index.html")
+    return render(request, "core/visitas.html")
 
 
 ## * Create Models (form)
