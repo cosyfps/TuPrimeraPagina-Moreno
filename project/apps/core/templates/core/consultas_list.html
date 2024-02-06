@@ -18,6 +18,9 @@
                             <th style="border: 1px solid black; padding: 8px;">Dueño</th>
                             <th style="border: 1px solid black; padding: 8px;">Doctor</th>
                             <th style="border: 1px solid black; padding: 8px;">Mascota Atendita</th>
+                            <th style="border: 1px solid black; padding: 8px;"></th>
+                            <th style="border: 1px solid black; padding: 8px;">Editar</th>
+                            <th style="border: 1px solid black; padding: 8px;">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,6 +31,10 @@
                             <td style="border: 1px solid black; padding: 8px;">{{ x.duenoConsulta }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.doctorConsulta }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.mascotaConsulta }}</td>
+                            <td>
+                                <a href="{% url 'consultas_update' x.id %}" class="btn btn-warning me-2">Editar</a>
+                                <a href="{% url 'consultas_delete' x.id %}" class="btn btn-danger">Eliminar</a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>

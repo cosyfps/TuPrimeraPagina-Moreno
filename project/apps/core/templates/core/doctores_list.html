@@ -19,6 +19,9 @@
                             <th style="border: 1px solid black; padding: 8px;">Especialidad</th>
                             <th style="border: 1px solid black; padding: 8px;">Dirección</th>
                             <th style="border: 1px solid black; padding: 8px;">Edad</th>
+                            <th style="border: 1px solid black; padding: 8px;"></th>
+                            <th style="border: 1px solid black; padding: 8px;">Editar</th>
+                            <th style="border: 1px solid black; padding: 8px;">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,6 +33,10 @@
                             <td style="border: 1px solid black; padding: 8px;">{{ x.especialidadDoctor }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.direccionDoctor }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.edadDoctor }}</td>
+                            <td>
+                                <a href="{% url 'doctores_update' x.id %}" class="btn btn-warning me-2">Editar</a>
+                                <a href="{% url 'doctores_delete' x.id %}" class="btn btn-danger">Eliminar</a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>

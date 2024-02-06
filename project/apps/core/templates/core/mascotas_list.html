@@ -17,6 +17,9 @@
                             <th style="border: 1px solid black; padding: 8px;">Raza</th>
                             <th style="border: 1px solid black; padding: 8px;">Fecha Nacimiento</th>
                             <th style="border: 1px solid black; padding: 8px;">Dueño</th>
+                            <th style="border: 1px solid black; padding: 8px;"></th>
+                            <th style="border: 1px solid black; padding: 8px;">Editar</th>
+                            <th style="border: 1px solid black; padding: 8px;">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +29,10 @@
                             <td style="border: 1px solid black; padding: 8px;">{{ x.razaMascota }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.fechanacimientoMascota }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.nombreDueno }}</td>
+                            <td>
+                                <a href="{% url 'mascotas_update' x.id %}" class="btn btn-warning me-2">Editar</a>
+                                <a href="{% url 'mascotas_delete' x.id %}" class="btn btn-danger">Eliminar</a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>
