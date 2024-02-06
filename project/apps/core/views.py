@@ -1,79 +1,113 @@
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 
-from . import models 
-from . import forms
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
+
+from .forms import * 
+from .models import *
 
 # Create your views here.
 
 ## * Main page
 def index(request):
-    return render(request, "core/visitas.html")
+    return render(request, "core/index.html")
 
 
 ## * Create Models (form)
-def clientes_form(request):
-    if request.method == 'POST':
-        form = forms.ClienteForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("clientes_list")
-    else:
-        form = forms.ClienteForm()
-    return render(request, "core/clientes_form.html", {"form" : form})
-
-def doctores_form(request):
-    if request.method == 'POST':
-        form = forms.DoctorForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("doctores_list")
-    else:
-        form = forms.DoctorForm()
-    return render(request, "core/doctores_form.html", {"form" : form})
-
-def moscotas_form(request):
-    if request.method == 'POST':
-        form = forms.MascotaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("mascotas_list")
-    else:
-        form = forms.MascotaForm()
-    return render(request, "core/mascotas_form.html", {"form" : form})
-
-def consultas_form(request):
-    if request.method == 'POST':
-        form = forms.ConsultaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("consultas_list")
-    else:
-        form = forms.ConsultaForm()
-    return render(request, "core/consultas_form.html", {"form" : form})
+class ClienteFormCreateView(CreateView):
+    model = Cliente
+    form_class = ClienteForm
+    template_name = 'core/clientes_form.html'
+    success_url = 'list'
 
 
-## * Read Models (list)
-def clientes_list(request):
-    consulta = models.Cliente.objects.all()
-    context = {"Cliente" : consulta}
-    return render(request, "core/clientes_list.html", context)
-
-def doctores_list(request):
-    consulta = models.Doctor.objects.all()
-    context = {"Doctor" : consulta}
-    return render(request, "core/doctores_list.html", context)
-
-def mascotas_list(request):
-    consulta = models.Mascota.objects.all()
-    context = {"Mascota":consulta}
-    return render(request, "core/mascotas_list.html", context)
-
-def consultas_list(request):
-    consulta = models.Consulta.objects.all()
-    context = {"Consulta":consulta}
-    return render(request, "core/consultas_list.html", context)
+class DoctorFormCreateView(CreateView):
+    model = Doctor
+    form_class = DoctorForm
+    template_name = 'core/doctores_form.html'
+    success_url = 'list'
 
 
-## TODO: Update Models (Update)
-## TODO: Delete Models (Delete)
+class MascotaFromCreateView(CreateView):
+    model = Mascota
+    form_class = MascotaForm
+    template_name = 'core/mascotas_form.html'
+    success_url = 'list'
 
+class ConsultaFromCreateView(CreateView):
+    model = Consulta
+    form_class = ConsultaForm
+    template_name = 'core/consultas_form.html'
+    success_url = 'list'
+
+## Read Models (list)
+class ClienteListView(ListView):
+    model = Cliente
+    template_name = 'core/clientes_list.html'
+
+
+class DoctorListView(ListView):
+    model = Doctor
+    template_name = 'core/doctores_list.html'
+
+
+class MascotaListView(ListView):
+    model = Mascota
+    template_name = 'core/mascotas_list.html'
+
+
+class ConsultaListView(ListView):
+    model = Consulta
+    template_name = 'core/consultas_list.html'
+
+
+## * Update Models (Update)
+class ClienteUpdateView(UpdateView):
+    model = Cliente
+    form_class = ClienteForm
+    success_url = 'list'
+
+
+class DoctorUpdateView(UpdateView):
+    model = Doctor
+    form_class = DoctorForm
+    success_url = 'list'  
+
+
+class MascotaUpdateView(UpdateView):
+    model = Mascota
+    form_class = MascotaForm
+    success_url = 'list'
+
+
+class ConsultaUpdateView(UpdateView):
+    model = Consulta
+    form_class = ConsultaForm
+    success_url = 'list'
+
+
+## * Delete Models (Delete)
+class ClienteDeleteView(DeleteView):
+    model = Cliente
+    success_url = 'list'
+
+
+class DoctorDeleteView(DeleteView):
+    model = Doctor
+    success_url = 'list'
+
+
+class MascotaDeleteView(DeleteView):
+    model = Mascota
+    success_url = 'list'
+
+
+class ConsultaDeleteView(DeleteView):
+    model = Consulta
+    success_url = 'list'
