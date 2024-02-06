@@ -33,8 +33,11 @@
                             <td style="border: 1px solid black; padding: 8px;">{{ x.especialidadDoctor }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.direccionDoctor }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.edadDoctor }}</td>
-                            <td>
+                            <td style="border: 1px solid black; padding: 8px;"></td>
+                            <td style="border: 1px solid black; padding: 8px;">
                                 <a href="{% url 'doctores_update' x.id %}" class="btn btn-warning me-2">Editar</a>
+                            </td>
+                            <td style="border: 1px solid black; padding: 8px;">
                                 <a href="{% url 'doctores_delete' x.id %}" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>

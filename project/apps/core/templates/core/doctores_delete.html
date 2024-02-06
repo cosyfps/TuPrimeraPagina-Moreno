@@ -7,13 +7,14 @@
     <header style="padding-top: calc(6rem + 104px); padding-bottom: 53rem;" class="masthead bg-primary text-white text-center" >
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Heading-->
-            <h2 class="masthead-heading text-uppercase mb-0">Mascotas Form</h2>
+            <h2 class="masthead-heading text-uppercase mb-0">Eliminar Doctor</h2>
             <h4 style="margin-top: 2rem; max-width: 1000px;">
                 <form method="post">
 
                     {% csrf_token %}
-                    {{form}}
-                    <button type="submit">Guardar Mascota</button>
+                    <p> Quiere Eliminar este Doctor ?</p>
+                    
+                    <button type="submit">Eliminar Doctor</button>
 
                 </form>
             </h4>

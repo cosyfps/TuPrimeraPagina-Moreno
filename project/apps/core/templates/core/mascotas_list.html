@@ -29,8 +29,11 @@
                             <td style="border: 1px solid black; padding: 8px;">{{ x.razaMascota }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.fechanacimientoMascota }}</td>
                             <td style="border: 1px solid black; padding: 8px;">{{ x.nombreDueno }}</td>
-                            <td>
+                            <td style="border: 1px solid black; padding: 8px;"></td>
+                            <td style="border: 1px solid black; padding: 8px;">
                                 <a href="{% url 'mascotas_update' x.id %}" class="btn btn-warning me-2">Editar</a>
+                            </td>
+                            <td style="border: 1px solid black; padding: 8px;">
                                 <a href="{% url 'mascotas_delete' x.id %}" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
