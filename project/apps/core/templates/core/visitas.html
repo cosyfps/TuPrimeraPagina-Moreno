@@ -152,43 +152,36 @@
                 </div>
 
                 <!-- Contact Section Form-->
-                <div class="row justify-content-center"> <!--TODO: Conectar el apartado Contact con un Email-->
+                <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
 
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Nombre Completo</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere un nombre.</div>
+                        <form method="POST" action="{% url 'visitas' %}">
+
+                            {% csrf_token %}
+
+                            <div class="mb-3">
+                                <label for="id_nombre" class="form-label">Nombre:</label>
+                                <input type="text" class="form-control" id="id_nombre" name="name" required>
                             </div>
-
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Direccion de Email</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">Se requiere un Email.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email no es valido.</div>
+                            <div class="mb-3">
+                                <label for="id_correo" class="form-label">Correo electrónico:</label>
+                                <input type="email" class="form-control" id="id_correo" name="email" required>
                             </div>
-
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Mensaje</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">Se requiere un mensaje.</div>
+                            <div class="mb-3">
+                                <label for="id_mensaje" class="form-label">Mensaje:</label>
+                                <textarea class="form-control" id="id_mensaje" name="message" rows="4" required></textarea>
                             </div>
-
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Enviado con exito!</div>
-                                </div>
-                            </div>
-                
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error al enviar Email!</div></div>
-
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
+
+                    </div>
+                </div>
+                
+                <div class="row justify-content-center mt-4">
+                    <div class="col-lg-8 col-xl-7">
+                        <table class="table" style="margin-left: 20px;">
+                            {{ form.as_table }}
+                        </table>
                     </div>
                 </div>
             </div>

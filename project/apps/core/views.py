@@ -17,7 +17,7 @@ from .models import *
 ## * Main page
 def index(request):
     return render(request, "core/index.html")
-
+    
 
 ## * Create Models (form)
 class ClienteFormCreateView(CreateView):
@@ -119,3 +119,31 @@ class ConsultaDeleteView(DeleteView):
     model = Consulta
     template_name = 'core/consultas_delete.html'
     success_url = 'list'
+
+# ---------------------------------------------------------------------
+
+# ! Configuracion Email
+
+from django.core.mail import send_mail
+from django.conf import settings
+from django.http import HttpResponse
+
+def visitas(request):
+    if request.method == 'POST':
+        message = request.POST['message']
+        email = request.POST['email']
+        name = request.POST['name']
+        
+        default_message = f"Correo: {email}\n\n{message}"
+        
+        send_mail(
+            name, 
+            default_message,  
+            email, 
+            ['kelvin.morenog28@gmail.com'],
+            fail_silently=False
+        )
+
+    return render(request, "core/visitas.html")
+
+
