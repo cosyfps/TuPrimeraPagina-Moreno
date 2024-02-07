@@ -13,7 +13,31 @@
 
                     {% csrf_token %}
                     <p> Quiere Eliminar este Doctor ?</p>
-                    
+
+                    <table>
+                        <thead>
+                            <tr style="border: 1px solid black; background-color: #15725b;">
+                                <th style="border: 1px solid black; padding: 8px;">Nombre</th>
+                                <th style="border: 1px solid black; padding: 8px;">Apellido</th>
+                                <th style="border: 1px solid black; padding: 8px;">Email</th>
+                                <th style="border: 1px solid black; padding: 8px;">Especialidad</th>
+                                <th style="border: 1px solid black; padding: 8px;">Dirección</th>
+                                <th style="border: 1px solid black; padding: 8px;">Edad</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: 1px solid black;">
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.nombreDoctor }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.apellidoDoctor }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.emailDoctor }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.especialidadDoctor }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.direccionDoctor }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.edadDoctor }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                     <button type="submit">Eliminar Doctor</button>
 
                 </form>

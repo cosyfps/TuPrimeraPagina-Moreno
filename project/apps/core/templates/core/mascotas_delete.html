@@ -14,6 +14,24 @@
                     {% csrf_token %}
                     <p> Quiere Eliminar esta Mascota ?</p>
                     
+                    <table>
+                        <thead>
+                            <tr style="border: 1px solid black; background-color: #15725b;">
+                            <th style="border: 1px solid black; padding: 8px;">Nombre</th>
+                            <th style="border: 1px solid black; padding: 8px;">Raza</th>
+                            <th style="border: 1px solid black; padding: 8px;">Fecha Nacimiento</th>
+                            <th style="border: 1px solid black; padding: 8px;">Dueño</th>
+                        </thead>
+                        <tbody>
+                            <tr style="border: 1px solid black;">
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.nombreMascota }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.razaMascota }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.fechanacimientoMascota }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.nombreDueno }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                     <button type="submit">Eliminar Mascota</button>
 
                 </form>

@@ -13,7 +13,28 @@
 
                     {% csrf_token %}
                     <p> Quiere Eliminar esta Consulta ?</p>
-                    
+
+                    <table>
+                        <thead>
+                            <tr style="border: 1px solid black; background-color: #15725b;">
+                                <th style="border: 1px solid black; padding: 8px;">Nombre Consulta</th>
+                                <th style="border: 1px solid black; padding: 8px;">Fecha Consulta</th>
+                                <th style="border: 1px solid black; padding: 8px;">Dueño</th>
+                                <th style="border: 1px solid black; padding: 8px;">Doctor</th>
+                                <th style="border: 1px solid black; padding: 8px;">Mascota Atendita</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: 1px solid black;">
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.nombreConsulta }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.fechaConsulta }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.duenoConsulta }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.doctorConsulta }}</td>
+                                <td style="border: 1px solid black; padding: 8px;">{{ object.mascotaConsulta }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                     <button type="submit">Eliminar Consulta</button>
 
                 </form>
