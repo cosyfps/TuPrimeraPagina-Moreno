@@ -2,9 +2,7 @@
 #### Comisión: 56065 
 #### Alumno: Kelvin A. Moreno
       
-## Nombre del Proyecto
-Veterinaria VetVida
-
+## Video Explicativo
 Video Explicativo: https://www.youtube.com/watch?v=bgN-M-6kPJg&ab_channel=KelvinA.Moreno
 
 ## Versión
