@@ -29,18 +29,10 @@
     <header style="padding-top: calc(6rem + 104px); padding-bottom: 53rem; margin-bottom: 50px;" class="masthead bg-primary text-white text-center" >
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Heading-->
-            <h2 class="masthead-heading text-uppercase mb-0">Login</h2>
+            <h2 class="masthead-heading text-uppercase mb-0">Logout</h2>
             <h4 style="margin-top: 2rem; max-width: 1000px;">
 
-                <form method="post" class="form-control">
-                    {% csrf_token %}
-                    {{form.as_p}}
-
-                    <input type="hidden" name="next" value="{% url 'index' %}">
-
-                    <button type="submit">Iniciar sesion</button>
-                    <a href="#">Crear Cuenta</a>
-                </form>
+                <h2> Haz cerrado sesion correctamente ;)</h2>
 
             </h4>
         </div>

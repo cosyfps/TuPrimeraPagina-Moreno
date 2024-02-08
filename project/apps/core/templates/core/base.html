@@ -40,7 +40,7 @@
 
             .masthead {
                 padding-top: calc(6rem + 104px);
-                padding-bottom: 53rem; /*2560*1440*/
+                padding-bottom: 24rem; /*2560*1440*/
             }
 
             .bg-primary {
@@ -69,6 +69,12 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'doctores_list' %}">Doctor</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'mascotas_list' %}">Mascota</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'consultas_list' %}">Consulta</a></li>
+                        <li class="nav-item mx-0 mx-lg-1" style="margin-top: 0.5rem;">
+                            <form action="{% url 'logout' %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-light">Logout</button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -79,9 +85,29 @@
         {% endblock content %}
         
 
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">                    
+
+                    <!-- Placeholder Column for Symmetry -->
+                    <div class="col-lg-4"></div>
+
+                    <!-- Footer Social Icons -->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Síguenos en</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/?lang=es" target="_blank"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/" target="_blank"><i class="fab fa-fw fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://wa.me/123456789" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>CoderHouse &copy; Pre-Entrega 3# 2024</small></div>
+            <div class="container"><small>Copyright &copy; Veterinaria VetVida 2024</small></div>
         </div>
 
         <!-- Bootstrap core JS-->
