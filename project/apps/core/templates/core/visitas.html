@@ -20,6 +20,8 @@
 
     <body id="inicio">
 
+        {% block header %}
+            
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
@@ -33,11 +35,15 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#servicios">Servicios</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Nuestro Equipo</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contacto">Contacto</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#login">Login</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'login' %}">Login</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        {% endblock header %}
+        
+        {% block content %}
 
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
@@ -187,6 +193,10 @@
             </div>
         </section>
 
+        {% endblock content %}
+        
+        {% block footer %}
+            
         <!-- Footer -->
         <footer class="footer text-center">
             <div class="container">
@@ -220,6 +230,8 @@
         <div class="copyright py-4 text-center text-white">
             <div class="container"><small>Copyright &copy; Veterinaria VetVida 2024</small></div>
         </div>
+
+        {% endblock footer %}
 
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->

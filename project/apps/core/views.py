@@ -120,6 +120,13 @@ class ConsultaDeleteView(DeleteView):
     template_name = 'core/consultas_delete.html'
     success_url = 'list'
 
+from django.contrib.auth.views import LoginView
+
+class CustomLoginView(LoginView):
+    authentication_form = CustomAuthenticationForm
+    template_name = 'core/login.html'
+
+
 # ---------------------------------------------------------------------
 
 # ! Configuracion Email

@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.models import User
 
 from . import models
 
@@ -25,8 +27,12 @@ class ConsultaForm(forms.ModelForm):
 
 # -------------------------------------------------------
         
-class TuFormulario(forms.Form):
-    nombre = forms.CharField(label='Nombre Completo', required=True, max_length=20, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese su nombre...'}))
-    email = forms.EmailField(label='Direccion de Email', required=True, max_length=30, widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'name@example.com'}))
-    contenido = forms.CharField(label='Mensaje', max_length=400, widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Ingrese su mensaje aquí...', 'style': 'height: 10rem; resize: none'}))
+class CustomAuthenticationForm(AuthenticationForm):
+    class Meta:
+        model = User
+        fields =["username", "password"]
+        widgets = {
+            "username": forms.TextInput(attrs={"class": "form-control"}),
+            "password": forms.PasswordInput(attrs={"class": "form-control"})
+        }
 

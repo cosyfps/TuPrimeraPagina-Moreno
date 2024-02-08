@@ -1,17 +1,84 @@
-{% extends 'core/base.html' %}
+{% extends 'core/visitas.html' %}
 
-<!-- * Content block-->
+{% block header %}
+    
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'visitas' %}">VetVida</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'visitas' %}">Servicios</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'visitas' %}">Nuestro Equipo</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'visitas' %}">Contacto</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'login' %}">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% endblock header %}
+
 {% block content %}
 
-    <!--  -->
-    <header style="padding-top: calc(6rem + 104px); padding-bottom: 53rem;" class="masthead bg-primary text-white text-center" >
+    <!-- Masthead -->
+    <header style="padding-top: calc(6rem + 104px); padding-bottom: 53rem; margin-bottom: 50px;" class="masthead bg-primary text-white text-center" >
         <div class="container d-flex align-items-center flex-column">
-            
+            <!-- Masthead Heading-->
+            <h2 class="masthead-heading text-uppercase mb-0">Login</h2>
+            <h4 style="margin-top: 2rem; max-width: 1000px;">
 
+                <form method="post" class="form-control">
+                    {% csrf_token %}
+                    {{form.as_p}}
 
+                    <input type="hidden" name="next" value="{% url 'index' %}">
 
-            
+                    <button type="submit">Iniciar sesion</button>
+                    <a href="#">Crear Cuenta</a>
+                </form>
+
+            </h4>
         </div>
-    </header>
 
 {% endblock content %}
+
+{% block footer %}
+<!-- Footer -->
+<footer style="margin-top: 37rem;" class="footer text-center">
+    <div class="container">
+        <div class="row">
+
+            <!-- Footer Location -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Dirección</h4>
+                <p class="lead mb-0">
+                    Santiago de Chile<br />
+                    Las Condes, Arauco 4200
+                </p>
+            </div>
+
+            <!-- Placeholder Column for Symmetry -->
+            <div class="col-lg-4"></div>
+
+            <!-- Footer Social Icons -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Síguenos en</h4>
+                <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fab fa-fw fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/?lang=es" target="_blank"><i class="fab fa-fw fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/" target="_blank"><i class="fab fa-fw fa-instagram"></i></a>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright Section-->
+<div class="copyright py-4 text-center text-white">
+    <div class="container"><small>Copyright &copy; Veterinaria VetVida 2024</small></div>
+</div>
+{% endblock footer %}
