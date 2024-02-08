@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import (
     CreateView,
@@ -20,76 +21,76 @@ def index(request):
     
 
 ## * Create Models (form)
-class ClienteFormCreateView(CreateView):
+class ClienteFormCreateView(LoginRequiredMixin, CreateView):
     model = Cliente
     form_class = ClienteForm
     template_name = 'core/clientes_form.html'
     success_url = 'list'
 
 
-class DoctorFormCreateView(CreateView):
+class DoctorFormCreateView(LoginRequiredMixin, CreateView):
     model = Doctor
     form_class = DoctorForm
     template_name = 'core/doctores_form.html'
     success_url = 'list'
 
 
-class MascotaFromCreateView(CreateView):
+class MascotaFromCreateView(LoginRequiredMixin, CreateView):
     model = Mascota
     form_class = MascotaForm
     template_name = 'core/mascotas_form.html'
     success_url = 'list'
 
-class ConsultaFromCreateView(CreateView):
+class ConsultaFromCreateView(LoginRequiredMixin, CreateView):
     model = Consulta
     form_class = ConsultaForm
     template_name = 'core/consultas_form.html'
     success_url = 'list'
 
 ## Read Models (list)
-class ClienteListView(ListView):
+class ClienteListView(LoginRequiredMixin, ListView):
     model = Cliente
     template_name = 'core/clientes_list.html'
 
 
-class DoctorListView(ListView):
+class DoctorListView(LoginRequiredMixin, ListView):
     model = Doctor
     template_name = 'core/doctores_list.html'
 
 
-class MascotaListView(ListView):
+class MascotaListView(LoginRequiredMixin, ListView):
     model = Mascota
     template_name = 'core/mascotas_list.html'
 
 
-class ConsultaListView(ListView):
+class ConsultaListView(LoginRequiredMixin, ListView):
     model = Consulta
     template_name = 'core/consultas_list.html'
 
 
 ## * Update Models (Update)
-class ClienteUpdateView(UpdateView):
+class ClienteUpdateView(LoginRequiredMixin, UpdateView):
     model = Cliente
     form_class = ClienteForm
     template_name = 'core/clientes_form.html'
     success_url = 'list'
 
 
-class DoctorUpdateView(UpdateView):
+class DoctorUpdateView(LoginRequiredMixin, UpdateView):
     model = Doctor
     form_class = DoctorForm
     template_name = 'core/doctores_form.html'
     success_url = 'list'  
 
 
-class MascotaUpdateView(UpdateView):
+class MascotaUpdateView(LoginRequiredMixin, UpdateView):
     model = Mascota
     form_class = MascotaForm
     template_name = 'core/mascotas_form.html'
     success_url = 'list'
 
 
-class ConsultaUpdateView(UpdateView):
+class ConsultaUpdateView(LoginRequiredMixin, UpdateView):
     model = Consulta
     form_class = ConsultaForm
     template_name = 'core/consultas_form.html'
@@ -97,25 +98,25 @@ class ConsultaUpdateView(UpdateView):
 
 
 ## * Delete Models (Delete)
-class ClienteDeleteView(DeleteView):
+class ClienteDeleteView(LoginRequiredMixin, DeleteView):
     model = Cliente
     template_name = 'core/clientes_delete.html'
     success_url = 'list'
 
 
-class DoctorDeleteView(DeleteView):
+class DoctorDeleteView(LoginRequiredMixin, DeleteView):
     model = Doctor
     template_name = 'core/doctores_delete.html'
     success_url = 'list'
 
 
-class MascotaDeleteView(DeleteView):
+class MascotaDeleteView(LoginRequiredMixin, DeleteView):
     model = Mascota
     template_name = 'core/mascotas_delete.html'
     success_url = 'list'
 
 
-class ConsultaDeleteView(DeleteView):
+class ConsultaDeleteView(LoginRequiredMixin, DeleteView):
     model = Consulta
     template_name = 'core/consultas_delete.html'
     success_url = 'list'
@@ -126,6 +127,15 @@ class CustomLoginView(LoginView):
     authentication_form = CustomAuthenticationForm
     template_name = 'core/login.html'
 
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("login")
+    else:
+        form = CustomUserCreationForm()
+    return render(request, "core/register.html", {"form":form})
 
 # ---------------------------------------------------------------------
 
