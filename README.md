@@ -8,11 +8,11 @@ Video Explicativo: https://www.youtube.com/watch?v=bgN-M-6kPJg&ab_channel=Kelvin
 ## Versión
 1.0
 
-> [!IMPORTANT]
-> El apartado de 'about/' no me parecio adecuado poner informacion sobre mi porque la pagina no la hice pensando en un portfolio, de hecho tiene muy poco de portfolio la cree con la intencion de ejemplificar lo que seria una descripcion general del proyecto en este caso una veterianria ;)
-
 ## Descripción del Proyecto
 veterinaria VetVida es un sistema que permite gestionar la información relacionada con pacientes, doctores, mascotas, consultas y otros aspectos relevantes para el funcionamiento de la veterinaria. 
+
+> [!IMPORTANT]
+> El apartado de 'about/' no me parecio adecuado poner informacion sobre mi porque la pagina no la hice pensando en un portfolio, de hecho tiene muy poco de portfolio la cree con la intencion de ejemplificar lo que seria una descripcion general del proyecto en este caso una veterianria ;)
 
 - Cuenta con una vista de inicio para los usuarios y una de administracion para RRHH (Recursos Humanos) de la Empresa.
 - La metodologia es simple, para llegar a agregar una consulta se necesita haber agregado de ante mano:
