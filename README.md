@@ -7,7 +7,8 @@ Video Explicativo: https://www.youtube.com/watch?v=bgN-M-6kPJg&ab_channel=Kelvin
 
 > [!IMPORTANT]
 > El apartado de 'about/' no me parecio adecuado poner informacion sobre mi porque la pagina no la hice pensando en un portfolio, de hecho tiene muy poco de portfolio la cree con la intencion de ejemplificar lo que seria una descripcion general del proyecto en este caso una veterianria ;)
-> Actualizacion: Solucion del problema de que ingresen al panel de 'administracion/' sin logearse, converti la funcion a una clase y tiene la restriccion pertinente.
+>
+>  Actualizacion: Solucion del problema de que ingresen al panel de 'administracion/' sin logearse, converti la funcion a una clase y tiene la restriccion pertinente.
 
 ## Versión
 1.0
