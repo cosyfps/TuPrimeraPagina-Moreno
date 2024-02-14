@@ -2,12 +2,14 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from django.views import View
 from django.views.generic import (
     CreateView,
     DeleteView,
     DetailView,
     ListView,
     UpdateView,
+    TemplateView,
 )
 
 from .forms import * 
@@ -16,9 +18,15 @@ from .models import *
 # Create your views here.
 
 ## * Main page
-def index(request):
-    return render(request, "core/index.html")
-    
+class index(LoginRequiredMixin, View): # * Arreglado el problema de iniciar a 'administracion/' sin logearse 
+    def get(self, request):
+        template = 'core/index.html'
+        
+        return render(request, template)    
+
+# class error404(TemplateView):
+#     template_name = 'core/error404.html'
+
 
 ## * Create Models (form)
 class ClienteFormCreateView(LoginRequiredMixin, CreateView):
