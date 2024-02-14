@@ -14,12 +14,12 @@ Video Explicativo: https://www.youtube.com/watch?v=bgN-M-6kPJg&ab_channel=Kelvin
 1.0
 
 ## Descripción del Proyecto
-veterinaria VetVida es un sistema que permite gestionar la información relacionada con pacientes, doctores, mascotas, consultas y otros aspectos relevantes para el funcionamiento de la veterinaria. 
-
+VetVida es un sistema diseñado para simplificar la gestión de una veterinaria. Con funciones intuitivas, permite administrar clientes, doctores, mascotas y consultas de manera eficiente. 
 
 - Cuenta con una vista de inicio para los usuarios y una de administracion para RRHH (Recursos Humanos) de la Empresa.
 - La metodologia es simple, para llegar a agregar una consulta se necesita haber agregado de ante mano:
    un cliente, un doctor y una mascota.
+- Apartado de Contacto completamente funcional para la gestion de consultas.
 - Pagina web de uso sencillo.
 - Prueba de lo visto en clases.
 
