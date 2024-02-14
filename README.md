@@ -5,6 +5,8 @@
 ## Video Explicativo
 Video Explicativo: https://www.youtube.com/watch?v=bgN-M-6kPJg&ab_channel=KelvinA.Moreno
 
+> Actualizacion: Solucion del problema de que ingresen al panel de 'administracion/' sin logearse, converti la funcion a una clase y tiene la restriccion pertinente.
+
 ## Versión
 1.0
 
