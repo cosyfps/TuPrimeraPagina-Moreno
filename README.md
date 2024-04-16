@@ -33,3 +33,7 @@ VetVida es un sistema diseñado para simplificar la gestión de una veterinaria.
 ##### Back-End
 - Python 3.12.1
 - Django 5.3.2
+
+## Contacto
+- Email: kelvin.morenog28@gmail.com
+- LinkedIn: [Kelvin A. Moreno](https://www.linkedin.com/in/kelvin-a-moreno/)
